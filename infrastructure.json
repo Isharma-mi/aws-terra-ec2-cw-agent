@@ -1,0 +1,24 @@
+{
+    "agent": {
+        "metrics_collection_interval": 300,
+        "region": "us-east-1",
+        "logfile": "/opt/aws/amazon-cloudwatch-agent/logs/amazon-cloudwatch-agent.log"
+    },
+    "metrics": {
+        "namespace": "Dev/cfn-ec2-cw-agent/All",
+        "append_dimensions": {
+            "ImageId": "${aws:ImageId}",
+            "InstanceId": "${aws:InstanceId}",
+            "InstanceType": "${aws:InstanceType}"
+        },
+        "metrics_collected": {
+            "cpu": {
+                "totalcpu": "true",
+                "measurement": [
+                    {"name": "time_active", "rename": "TimeActive", "unit": "Seconds"},
+                    {"name": "time_idle", "rename": "TimeIdle", "unit": "Seconds"}
+                ]
+            }
+        }
+    }
+}
