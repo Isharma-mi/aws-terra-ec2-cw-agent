@@ -13,7 +13,7 @@
         },
         "metrics_collected": {
             "cpu": {
-                "totalcpu": "true",
+                "totalcpu": true,
                 "measurement": [
                     {"name": "time_active", "rename": "TimeActive", "unit": "Seconds"},
                     {"name": "time_idle", "rename": "TimeIdle", "unit": "Seconds"}
