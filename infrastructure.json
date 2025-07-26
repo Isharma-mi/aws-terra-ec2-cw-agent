@@ -19,6 +19,17 @@
                     {"name": "time_idle", "rename": "TimeIdle", "unit": "Seconds"}
                 ]
             }
+        },
+        "disk": {
+            "resources": [
+                "*"
+            ],
+            "measurement": [
+                {"name": "free", "rename": "Free", "unit": "Gigabytes"},
+                {"name": "total", "rename": "Total", "unit": "Gigabytes"},
+                {"name": "used", "rename": "Used", "unit": "Gigabytes"}
+            ]
         }
     }
 }
+
