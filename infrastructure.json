@@ -15,10 +15,39 @@
             "cpu": {
                 "totalcpu": true,
                 "measurement": [
-                    {"name": "time_active", "rename": "TimeActive", "unit": "Seconds"},
-                    {"name": "time_idle", "rename": "TimeIdle", "unit": "Seconds"}
+                    {"name": "time_active", "rename": "Time-Active_CPU", "unit": "Seconds"},
+                    {"name": "time_idle", "rename": "Time-Idle_CPU", "unit": "Seconds"}
+                ]
+            },
+            "disk": {
+                "resources": [
+                    "*"
+                ],
+                "measurement": [
+                    {"name": "free", "rename": "Free_Disk", "unit": "Bytes"},
+                    {"name": "total", "rename": "Total_Disk", "unit": "Bytes"},
+                    {"name": "used", "rename": "Used_Disk", "unit": "Bytes"}
+                ]
+            },
+            "diskio": {
+                "resources": [
+                    "*"
+                ],
+                "measurement": [
+                    {"name": "reads", "rename": "Reads_Diskio", "unit": "Kilobytes/Second"},
+                    {"name": "read_time", "rename": "Read-Time_Diskio", "unit": "Kilobytes/Second"},
+                    {"name": "writes", "rename": "Writes_Diskio", "unit": "Kilobytes/Second"},
+                    {"name": "write_time", "rename": "Write-Time_Diskio", "unit": "Kilobytes/Second"}
+                ]
+            },
+            "mem": {
+                "measurement": [
+                    {"name": "available", "rename": "Available_Memory", "unit": "Bytes"},
+                    {"name": "total", "rename": "Total_Memory", "unit": "Bytes"},
+                    {"name": "used", "rename": "Used_Memory", "unit": "Bytes"}
                 ]
             }
         }
     }
 }
+
