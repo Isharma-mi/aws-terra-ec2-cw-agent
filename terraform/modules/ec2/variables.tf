@@ -13,3 +13,8 @@ variable "ec2_tag_name" {
     description = "The value of the name tag of the instance."
     type = string
 }
+
+variable "ec2_sg_name" {
+    description = "The name of the security group of the instance."
+    type = string
+}
