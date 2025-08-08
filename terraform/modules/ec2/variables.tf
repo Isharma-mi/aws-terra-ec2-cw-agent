@@ -1,10 +1,15 @@
 variable "ec2_ami_id" {
-    description = "The AMI for the instance."
+    description = "The ID of the AMI for the instance."
     type = string
 }
 
 variable "ec2_instance_type" {
     default = "t3.micro"
     description = "The instance type for the instance."
+    type = string
+}
+
+variable "ec2_tag_name" {
+    description = "The value of the name tag of the instance."
     type = string
 }

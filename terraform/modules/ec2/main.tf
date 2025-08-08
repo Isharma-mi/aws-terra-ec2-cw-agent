@@ -3,6 +3,6 @@ resource "aws_instance" "web_server" {
     instance_type = var.ec2_instance_type
 
     tags = {
-        name = "TestInstance"
+        name = var.ec2_tag_name
     }
 }
