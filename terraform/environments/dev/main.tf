@@ -8,4 +8,6 @@ module "ec2_instance" {
     
     # SG Config
     ec2_sg_name = "dev-EC2Instance-SG"
+    ec2_sg_egress_cidr_ipv4 = "0.0.0.0/0"
+    ec2_sg_ingress_cidr_ipv4 = "0.0.0.0/0"
 }

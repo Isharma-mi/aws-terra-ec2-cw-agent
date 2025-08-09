@@ -1,3 +1,6 @@
+# ------------------------------
+# EC2 Instance
+# ------------------------------
 variable "ec2_ami_id" {
     description = "The ID of the AMI for the instance."
     type = string
@@ -14,7 +17,20 @@ variable "ec2_tag_name" {
     type = string
 }
 
+# ------------------------------
+# EC2 Instance SG
+# ------------------------------
 variable "ec2_sg_name" {
     description = "The name of the security group of the instance."
+    type = string
+}
+
+variable "ec2_sg_egress_cidr_ipv4" {
+    description = "The outbound cidr ipv4 for the sg."
+    type = string
+}
+
+variable "ec2_sg_ingress_cidr_ipv4" {
+    description = "The inbound cidr ipv4 for the sg."
     type = string
 }
