@@ -11,3 +11,9 @@ module "ec2_instance" {
     ec2_sg_egress_cidr_ipv4 = "0.0.0.0/0"
     ec2_sg_ingress_cidr_ipv4 = "0.0.0.0/0"
 }
+
+module "iam" {
+    source = "../../modules/iam"
+
+    iam_ec2_role_name = "dev-IAMRoleForEC2Profile"
+}
