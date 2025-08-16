@@ -16,4 +16,5 @@ module "iam" {
     source = "../../modules/iam"
 
     iam_ec2_role_name = "dev-IAMRoleForEC2Profile"
+    iam_ec2_cw_policy_name = "dev-CWAccessPolicy"
 }

@@ -1,4 +1,4 @@
-resource "aws_iam_role" "iam_ec2_role" { # TODO: Refactor name so it doesn't have iam in front (Already in iam module anyways)
+resource "aws_iam_role" "ec2_role" {
     name = var.iam_ec2_role_name
 
     assume_role_policy = jsonencode({
@@ -20,7 +20,7 @@ resource "aws_iam_role" "iam_ec2_role" { # TODO: Refactor name so it doesn't hav
 }
 
 resource "aws_iam_policy" "ec2_cw_policy" {
-    name = "CWAccessPolicy"
+    name = var.iam_ec2_cw_policy_name
     description = "Policy similar to CloudWatchAgentServerPolicy's but restricted by namespace"
 
     policy = jsonencode({
@@ -49,4 +49,13 @@ resource "aws_iam_policy" "ec2_cw_policy" {
             }
         ]
     })
+
+    tags = {
+        name = var.iam_ec2_cw_policy_name
+    }
+}
+
+resource "aws_iam_role_policy_attachment" "ec2_role_cw_policy_attach" {
+    policy_arn = aws_iam_policy.ec2_cw_policy.arn
+    role = aws_iam_role.ec2_role.name
 }
