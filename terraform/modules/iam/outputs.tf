@@ -1,4 +1,4 @@
-output "iam_ec2_role_name" {
-    value = aws_iam_role.ec2_role.name
-    description = "The name of the iam role to be used as the EC2 instance profile."
+output "iam_ec2_instance_profile_name" {
+    value = aws_iam_instance_profile.ec2_instance_profile.name
+    description = "The name of the instance profile to be used by the EC2 instance."
 }

@@ -1,6 +1,6 @@
 resource "aws_instance" "web_server" {
     ami = var.ec2_ami_id
-    iam_instance_profile = aws_iam_instance_profile.ec2_instance_profile.id
+    iam_instance_profile = var.ec2_instance_profile_name
     instance_type = var.ec2_instance_type
     user_data = <<-EOF
         #!/bin/bash
@@ -12,11 +12,6 @@ resource "aws_instance" "web_server" {
         name = var.ec2_tag_name
     }
 
-}
-
-resource "aws_iam_instance_profile" "ec2_instance_profile"{
-    name = "TestEC2InstanceProfile"
-    role = var.ec2_role_name
 }
 
 # ------------------------------

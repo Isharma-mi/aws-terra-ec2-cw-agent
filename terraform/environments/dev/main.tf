@@ -3,12 +3,12 @@ module "ec2_instance" {
     
     # EC2 Instance Config
     ec2_ami_id = data.aws_ami.amazon_linux.id
+    ec2_instance_profile_name = module.iam.iam_ec2_instance_profile_name
     ec2_instance_type = "t3.micro"
-    ec2_role_name = module.iam.iam_ec2_role_name
-    ec2_tag_name = "dev-EC2Instance"
+    ec2_tag_name = "dev-ec2-instance"
     
     # SG Config
-    ec2_sg_name = "dev-EC2Instance-SG"
+    ec2_sg_name = "dev-ec2-instance-sg"
     ec2_sg_egress_cidr_ipv4 = "0.0.0.0/0"
     ec2_sg_ingress_cidr_ipv4 = "0.0.0.0/0"
 }
@@ -16,6 +16,7 @@ module "ec2_instance" {
 module "iam" {
     source = "../../modules/iam"
 
-    iam_ec2_role_name = "dev-IAMRoleForEC2Profile"
-    iam_ec2_cw_policy_name = "dev-CWAccessPolicy"
+    iam_ec2_role_name = "dev-iam-role-for-ec2-profile"
+    iam_ec2_cw_policy_name = "dev-cw-access-policy"
+    iam_ec2_instance_profile = "dev-iam-ec2-profile"
 }
