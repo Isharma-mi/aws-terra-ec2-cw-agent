@@ -17,6 +17,10 @@ variable "ec2_tag_name" {
     type = string
 }
 
+variable "ec2_role_name" {
+    description = "The name of the outputted role to be used as the EC2 instance profile."
+}
+
 # ------------------------------
 # EC2 Instance SG
 # ------------------------------

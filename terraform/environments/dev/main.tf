@@ -4,6 +4,7 @@ module "ec2_instance" {
     # EC2 Instance Config
     ec2_ami_id = data.aws_ami.amazon_linux.id
     ec2_instance_type = "t3.micro"
+    ec2_role_name = module.iam.iam_ec2_role_name
     ec2_tag_name = "dev-EC2Instance"
     
     # SG Config
