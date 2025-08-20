@@ -12,7 +12,6 @@ variable "ec2_ami_id" {
 }
 
 variable "ec2_instance_type" {
-    default = "t3.micro"
     description = "The instance type for the instance."
     type = string
 }
