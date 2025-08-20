@@ -9,7 +9,7 @@ resource "aws_instance" "web_server" {
     vpc_security_group_ids = [aws_security_group.web_server_sg.id]
     
     tags = {
-        name = var.ec2_tag_name
+        name = "${var.env}-ec2-instance"
     }
 
 }
@@ -18,10 +18,10 @@ resource "aws_instance" "web_server" {
 # EC2 Instance SG
 # ------------------------------
 resource "aws_security_group" "web_server_sg" {
-    name = var.ec2_sg_name
+    name = "${var.env}-ec2-instance-sg"
 
     tags = {
-        name = var.ec2_sg_name
+        name = "${var.env}-ec2-instance-sg"
     }
 }
 
