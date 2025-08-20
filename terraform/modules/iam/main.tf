@@ -1,5 +1,5 @@
 resource "aws_iam_role" "ec2_role" {
-    name = var.iam_ec2_role_name
+    name = "${var.env}-iam-role-for-ec2-profile"
 
     assume_role_policy = jsonencode({
         Version = "2012-10-17"
@@ -15,12 +15,12 @@ resource "aws_iam_role" "ec2_role" {
     })
 
     tags = {
-        name = var.iam_ec2_role_name
+        name = "${var.env}-iam-role-for-ec2-profile"
     }
 }
 
 resource "aws_iam_policy" "ec2_cw_policy" {
-    name = var.iam_ec2_cw_policy_name
+    name = "${var.env}-cw-access-policy"
     description = "Policy similar to CloudWatchAgentServerPolicy's but restricted by namespace"
 
     policy = jsonencode({
@@ -51,7 +51,7 @@ resource "aws_iam_policy" "ec2_cw_policy" {
     })
 
     tags = {
-        name = var.iam_ec2_cw_policy_name
+        name = "${var.env}-cw-access-policy"
     }
 }
 
@@ -61,10 +61,10 @@ resource "aws_iam_role_policy_attachment" "ec2_role_cw_policy_attach" {
 }
 
 resource "aws_iam_instance_profile" "ec2_instance_profile" {
-    name = var.iam_ec2_instance_profile
+    name = "${var.env}-iam-ec2-profile"
     role = aws_iam_role.ec2_role.name
 
     tags = {
-        name = var.iam_ec2_instance_profile
+        name = "${var.env}-iam-ec2-profile"
     }
 }

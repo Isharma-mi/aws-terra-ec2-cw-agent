@@ -16,7 +16,5 @@ module "ec2_instance" {
 module "iam" {
     source = "../../modules/iam"
 
-    iam_ec2_role_name = "dev-iam-role-for-ec2-profile"
-    iam_ec2_cw_policy_name = "dev-cw-access-policy"
-    iam_ec2_instance_profile = "dev-iam-ec2-profile"
+    env = var.env
 }
