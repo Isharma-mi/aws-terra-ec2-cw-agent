@@ -2,7 +2,11 @@ resource "aws_instance" "web_server" {
     ami = var.ec2_ami_id
     iam_instance_profile = var.ec2_instance_profile_name
     instance_type = var.ec2_instance_type
-    user_data = file("${path.module}/../../../templates/dev/user_data.tpl")
+    user_data = templatefile("${path.module}/../../../templates/dev/user_data.tpl", {
+        config_json = templatefile("${path.module}/../../environments/${var.env}/infrastructure.json", {
+            namespace = "testing-namespace-from-terra-project"
+        })
+    })
     vpc_security_group_ids = [aws_security_group.web_server_sg.id]
     
     tags = {
