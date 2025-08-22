@@ -5,11 +5,11 @@
         "logfile": "/opt/aws/amazon-cloudwatch-agent/logs/amazon-cloudwatch-agent.log"
     },
     "metrics": {
-        "namespace": "Dev/cfn-ec2-cw-agent/All",
+        "namespace": "${namespace}",
         "append_dimensions": {
-            "ImageId": "${aws:ImageId}",
-            "InstanceId": "${aws:InstanceId}",
-            "InstanceType": "${aws:InstanceType}"
+            "ImageId": "$${aws:ImageId}",
+            "InstanceId": "$${aws:InstanceId}",
+            "InstanceType": "$${aws:InstanceType}"
         },
         "metrics_collected": {
             "cpu": {
@@ -50,4 +50,3 @@
         }
     }
 }
-
