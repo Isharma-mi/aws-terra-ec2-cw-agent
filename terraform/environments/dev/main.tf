@@ -11,7 +11,7 @@ module "ec2_instance" {
 
     # EC2 Instance Config
     ami_id = data.aws_ami.amazon_linux.id
-    instance_profile_name = module.iam.iam_ec2_instance_profile_name
+    instance_profile_name = module.iam.ec2_instance_profile_name_out
     instance_type = var.ec2_instance_type
     namespace = module.cw.cw_namespace
     

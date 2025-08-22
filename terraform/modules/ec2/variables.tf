@@ -1,4 +1,4 @@
-variable env {
+variable "env" {
     description = "Prefix for the ec2 module's resources to indicate what env they are a part of."
     type = string
 }
