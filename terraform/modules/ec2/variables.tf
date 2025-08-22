@@ -4,6 +4,14 @@ variable env {
 }
 
 # ------------------------------
+# EC2 Instance CW
+# ------------------------------
+variable "namespace" {
+    description = "Name of the outputted namespace to be used for cw agent."
+    type = string
+}
+
+# ------------------------------
 # EC2 Instance
 # ------------------------------
 variable "ec2_ami_id" {
