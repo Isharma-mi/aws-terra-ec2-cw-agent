@@ -45,7 +45,12 @@ resource "aws_iam_policy" "ec2_cw_policy" {
                     "xray:GetSamplingStatisticSummaries"
                 ]
                 Effect = "Allow"
-                Resource = "*" # TODO: Restrict the policy to the namespace once the CW module is made
+                Resource = "*"
+                Condition = {
+                    "StringEquals" = {
+                        "cloudwatch:namespace": "${var.namespace}"
+                    }
+                }
             }
         ]
     })

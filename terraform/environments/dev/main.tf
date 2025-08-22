@@ -24,4 +24,7 @@ module "iam" {
     source = "../../modules/iam"
 
     env = var.env
+
+    namespace = module.cw.cw_namespace
+
 }
