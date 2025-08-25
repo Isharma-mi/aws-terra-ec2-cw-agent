@@ -1,4 +1,4 @@
-# dev environment
+# dev Environment
 
 ## Description
 > Contains the files configuring the cloud infrastructure for the dev environment.
