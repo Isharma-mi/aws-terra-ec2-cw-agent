@@ -25,6 +25,7 @@
     - terraform plan: Review the infrastructure and make sure everything looks good.
     - terraform apply: Make changes to the account by applying the infrastructure.
 
+
 ## Directory Layout
     .
     ├───templates               # user data .tpl file used by the instance
