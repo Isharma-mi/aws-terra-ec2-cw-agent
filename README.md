@@ -2,6 +2,7 @@
 
 ## Description
 > A Terraform project provisioning an AWS EC2 instance with the CloudWatch Agent automatically installed and configured to push custom metrics in a dedicated namespace.
+> NOTE: No prod environment was created as this project is intended to showcase terraform knowledge.
 
 ### Features
 - EC2 Instance (Customizable to set instance type and restrict ingress/egress traffic)
