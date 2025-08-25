@@ -12,6 +12,6 @@
 
 ## Directory Layout
     .
-    │       outputs.tf
-    │       README.md
-    │       variables.tf
+    |    outputs.tf
+    |    README.md
+    |    variables.tf
