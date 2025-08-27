@@ -1,18 +1,18 @@
 # CW Agent Auto Installation on EC2 Instance
 
 ## Description
-> A Terraform project provisioning an AWS EC2 instance with the CloudWatch Agent automatically installed and configured to push custom metrics in a dedicated namespace.
+> A Terraform project provisioning an AWS EC2 instance with the CloudWatch(CW) Agent automatically installed and configured to push custom metrics in a dedicated namespace.
 > NOTE: No prod environment was created as this project is intended to showcase terraform knowledge.
 
 ### Features
 - EC2 Instance (Customizable to set instance type and restrict ingress/egress traffic)
     - Auto installation and starting of the CW Agent
 - CW Custom namespace to separate instance metrics from other metrics
-### Technologies Used
-- AWS
-- Bash
-- HCL
-- JSON
+### Tech Stack
+- AWS (EC2, IAM, CloudWatch)
+- Bash: Utilize user data for setting up instance on startup
+- JSON: Configure the CloudWatch Agent with a custom infrastructure.json
+- Terraform (HCL): Automate cloud deployments with modularization
 
 ### Requirements
 - AWS user with permissions related to EC2 and CloudWatch
